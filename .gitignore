@@ -1,0 +1,13 @@
+# Config locale avec identifiants réels (BDD + SMTP) — ne jamais committer
+env.php
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Éditeurs
+.vscode/
+.idea/
+
+# Logs
+*.log
