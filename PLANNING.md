@@ -1,4 +1,4 @@
-# Planning du projet — Clean Elephant (E5 BTS SIO)
+# Planning du projet Clean Elephant (E5 BTS SIO)
 
 > ⚠️ Dates indicatives à ajuster une fois la date de soutenance connue. Le planning couvre au minimum M+1 comme demandé par le référentiel.
 
