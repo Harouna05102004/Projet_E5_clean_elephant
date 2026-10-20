@@ -16,6 +16,8 @@ Projet réalisé dans le cadre de l'épreuve **E5 du BTS SIO** (option SISR) à 
 - Validation des champs Nom/Prénom (saisie de chiffres bloquée, côté JS et HTML)
 - Notification desktop pour le bouton d'appel (le lien `tel:` ouvre le composeur sur mobile ; sur desktop, le numéro est copié et affiché dans une notification)
 
+https://www.figma.com/design/GZNc7n6HmGL4l33naod1CE/Sans-titre?node-id=32-475&t=EGcEEXVvkgHBC0aW-1
+
 ## Stack technique
 
 | Composant     | Choix                              |
