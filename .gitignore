@@ -11,3 +11,8 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Fichiers uploadés par l'admin (devis/factures des clients) : jamais versionnés,
+# seule l'arborescence (.gitkeep) est conservée dans le repo.
+uploads/devis/*.pdf
+uploads/factures/*.pdf

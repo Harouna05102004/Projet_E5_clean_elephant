@@ -1,58 +1,75 @@
 <?php
-// Page nettoyage pour professionnels - Clean Elephant
+/*
+ * entreprises.php — Prestations pour les professionnels
+ * Même structure que particuliers.php : seuls les textes et les prestations changent.
+ */
+require_once __DIR__ . '/includes/securite.php';   // en premier : session pour le formulaire de rappel du pied de page
+require_once __DIR__ . '/includes/icones.php';
+
+$page_active = 'pros';
+
+$prestations = [
+    ['cle' => 'contrat',     'titre' => "Contrat d'entretien", 'texte' => "Un passage régulier, planifié selon votre activité : vos vitres restent propres sans que vous ayez à y penser."],
+    ['cle' => 'bureaux',     'titre' => 'Bureaux',             'texte' => "Fenêtres et cloisons vitrées de vos locaux, en horaires adaptés à votre activité."],
+    ['cle' => 'vitrine',     'titre' => 'Vitrine commerciale', 'texte' => "Une vitrine nette, c'est la première impression que vous donnez à vos clients."],
+    ['cle' => 'immeuble',    'titre' => 'Immeuble',            'texte' => "Halls, cages d'escalier et parties vitrées des immeubles."],
+    ['cle' => 'copropriete', 'titre' => 'Copropriété',         'texte' => "Pour les syndics et conseils syndicaux : entretien des surfaces vitrées communes."],
+    ['cle' => 'hauteur',     'titre' => 'Grande hauteur',      'texte' => "Vitres difficiles d'accès, traitées avec du matériel adapté."],
+];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nettoyage pour professionnels - Clean Elephant</title>
+    <title>Nettoyage de vitres pour professionnels | Clean Elephant</title>
+    <meta name="description" content="Nettoyage de vitres de bureaux, vitrines, immeubles et copropriétés à Montmagny et en Île-de-France. Contrats d'entretien, devis gratuit.">
+    <meta name="theme-color" content="#0B1E3A">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<?php include 'includes/header.php'; ?>
+<?php include __DIR__ . '/includes/header.php'; ?>
 
-<section class="page-section">
-    <p class="breadcrumb"><a href="index.php">Accueil</a> › Entreprises</p>
+<main id="main-content">
 
-    <h1 class="services-title">Nettoyage pour professionnels</h1>
-    <p class="page-intro-wide">Bureaux, vitrines, immeubles, copropriétés — nous intervenons sur site avec du matériel professionnel, en horaires adaptés à votre activité. Devis gratuit, contrats d'entretien possibles.</p>
+    <section class="page-hero" aria-labelledby="titre-page">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Fil d'Ariane">
+                <ol>
+                    <li><a href="index.php">Accueil</a></li>
+                    <li aria-current="page">Professionnels</li>
+                </ol>
+            </nav>
+            <!-- Interrupteur : on change de page en un clic si on s'est trompé de profil -->
+            <nav class="switch" aria-label="Choisir votre profil">
+                <a href="particuliers.php">Je suis un particulier</a>
+                <a href="entreprises.php" aria-current="page">Je suis un professionnel</a>
+            </nav>
+            <div class="page-hero__grid">
+                <div>
+                    <p class="kicker">Nos services · Professionnels</p>
+                    <h1 class="page-hero__title" id="titre-page">
+                        <span class="line"><span>Votre image,</span></span>
+                        <span class="line"><span><em>sans une trace.</em></span></span>
+                    </h1>
+                </div>
+                <p class="lead">Bureaux, vitrines, immeubles, copropriétés : nous intervenons sur site avec du matériel professionnel, en horaires adaptés à votre activité. Contrats d'entretien possibles.</p>
+            </div>
+        </div>
+    </section>
 
-    <div class="services-grid">
-        <a href="devis.php?type=bureaux" class="service-card">
-            <div class="service-icon">🏢</div>
-            <span>Bureaux</span>
-        </a>
-        <a href="devis.php?type=vitrine" class="service-card">
-            <div class="service-icon">🏬</div>
-            <span>Vitrine commerciale</span>
-        </a>
-        <a href="devis.php?type=immeuble" class="service-card">
-            <div class="service-icon">🏙️</div>
-            <span>Immeuble</span>
-        </a>
-        <a href="devis.php?type=copropriete" class="service-card">
-            <div class="service-icon">🏘️</div>
-            <span>Copropriété</span>
-        </a>
-        <a href="devis.php?type=hauteur" class="service-card">
-            <div class="service-icon">↕️</div>
-            <span>Grande hauteur</span>
-        </a>
-        <a href="devis.php?type=contrat" class="service-card">
-            <div class="service-icon">📄</div>
-            <span>Contrat d'entretien</span>
-        </a>
-    </div>
+    <section class="section" aria-label="Nos prestations pour les professionnels">
+        <div class="container">
+            <?php include __DIR__ . '/includes/tuiles.php'; ?>
+        </div>
+    </section>
 
-    <div class="services-actions">
-        <a href="devis.php" class="btn btn-primary">› DEVIS GRATUIT</a>
-        <a href="index.php" class="btn btn-outline-dark">RETOUR</a>
-    </div>
-</section>
+    <?php include __DIR__ . '/includes/processus.php'; ?>
 
-<?php include 'includes/footer.php'; ?>
+</main>
+
+<?php include __DIR__ . '/includes/footer.php'; ?>
 
 </body>
 </html>

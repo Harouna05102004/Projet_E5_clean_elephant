@@ -1,0 +1,7 @@
+# uploads/.htaccess — Personne n'accède directement aux PDF des clients.
+# Apache refuse toute requête vers ce dossier (erreur 403).
+# Les PDF sont envoyés uniquement par des scripts PHP qui vérifient la connexion :
+#   - admin/fichier.php              (admin connecté)
+#   - espace-client/telecharger.php  (client connecté, uniquement SA demande)
+# PHP lit les fichiers directement sur le disque : ce blocage ne le gêne pas.
+Require all denied
